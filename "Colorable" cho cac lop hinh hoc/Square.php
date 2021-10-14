@@ -4,7 +4,7 @@ include_once "Colorable.php";
 
 class Square extends Rectangle implements Colorable
 {
-    #[Pure] public function __construct(string $name, int $width)
+    public function __construct( $name,  $width)
     {
         parent::__construct($name, $width, $width);
     }
@@ -12,4 +12,5 @@ class Square extends Rectangle implements Colorable
     {
         return "Color all four sides..";
     }
+
 }

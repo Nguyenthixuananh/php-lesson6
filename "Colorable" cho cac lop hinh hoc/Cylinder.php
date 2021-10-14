@@ -1,24 +1,25 @@
 <?php
-use JetBrains\PhpStorm\Pure;
+
+include_once "Circle.php";
 
 class Cylinder extends Circle
 {
     public int $height;
 
-    #[Pure] public function __construct(string $name,
-                                        int|float $radius,
-                                        int $height)
+    public function __construct($name,
+                                $radius,
+                                $height)
     {
         parent::__construct($name, $radius);
         $this->height = $height;
     }
 
-    #[Pure] public function calculateArea(): float|int
+    public function calculateArea()
     {
         return parent::calculateArea() * 2 + parent::calculatePerimeter() * $this->height;
     }
 
-    #[Pure] public function calculateVolume(): float|int
+    public function calculateVolume()
     {
         return parent::calculateArea() * $this->height;
     }

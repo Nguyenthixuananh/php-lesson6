@@ -1,26 +1,26 @@
 <?php
-use JetBrains\PhpStorm\Pure;
+include_once "Shape.php";
 
 class Rectangle extends Shape
 {
-    public int $width;
+    public $width;
     public int $height;
 
-    #[Pure] public function __construct(string $name,
-                                        int $width,
-                                        int $height)
+    public function __construct($name,
+                                $width,
+                                $height)
     {
         parent::__construct($name);
         $this->width = $width;
         $this->height = $height;
     }
 
-    public function calculateArea(): float|int
+    public function calculateArea()
     {
         return $this->height * $this->width;
     }
 
-    public function calculatePerimeter(): float|int
+    public function calculatePerimeter()
     {
         return ($this->height + $this->width) * 2;
     }
